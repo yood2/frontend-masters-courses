@@ -1,0 +1,63 @@
+* { 
+    box-sizing: border-box;
+}
+
+body {
+    padding: 10px;
+}
+
+.header {
+    background-color: #43281c;
+    display: flex;
+    justify-content: center;
+    padding: 20px 20px 20px 20px;
+}
+
+.logo {
+    height: 25px;
+    position: relative;
+    top: 17px;
+}
+
+.header-text {
+    font-family: 'Open Sans', sans-serif;
+    color: #fbf2c0;
+    padding-left: 5px;
+}
+
+.section {
+    background-color: #dbbc94;
+}
+
+.section-title {
+    font-family: 'Open Sans', sans-serif;
+    color: #84552b;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+.item {
+    display: flex;
+    border-bottom: solid 10px;
+    border-color: #e5cbb2;
+}
+
+.item-quantity {
+    font-family: 'Open Sans', sans-serif;
+    color: black;
+}
+
+.item-name {
+    font-family: 'Open Sans', sans-serif;
+    color: black;
+}
+
+.item-modifiers {
+    font-family: 'Open Sans', sans-serif;
+    color: black;
+}
+
+.item-price {
+    font-family: 'Open Sans', sans-serif;
+    color: black;
+}
