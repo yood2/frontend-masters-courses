@@ -1,0 +1,70 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 30px;
+}
+
+.brand {
+    font-family: cursive;
+    font-size: 60px;
+    text-align: center;
+}
+
+.brand-header {
+    grid-area: header;
+}
+
+.nav-links {
+    grid-area: nav;
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+}
+
+.section-link {
+    font-family: Arial, Helvetica, sans-serif;
+    color: gray;
+    text-decoration: none;
+}
+
+.section-link:hover {
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: underline;
+}
+
+.story {
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.story-1 {
+    grid-area: story1;
+}
+
+.story-2 {
+    grid-area: story2;
+}
+
+.story-3 {
+    grid-area: story3;
+}
+
+.story-4 {
+    grid-area: story4;
+}
+
+.story-5 {
+    grid-area: story5;
+}
+
+.page {
+    display: grid;
+    grid-template-areas: 
+    "header header header"
+    "nav nav nav"
+    "story1 story2 story3"
+    "story4 story5 story5"
+}
+
