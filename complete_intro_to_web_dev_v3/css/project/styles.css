@@ -1,63 +1,72 @@
-* { 
-    box-sizing: border-box;
+* {
+    box-sizing: border-box
 }
 
 body {
-    padding: 10px;
+    margin: 0;
+    padding: 0;  
+    background-color: #efefef;
+    font-family: 'Open Sans', sans-serif;
 }
 
-.header {
+.main-nav {
     background-color: #43281c;
+    color: #fbf2c0;
+    font-size: 16px;
     display: flex;
+    align-items: center;
     justify-content: center;
-    padding: 20px 20px 20px 20px;
+    font-weight: normal;
 }
 
 .logo {
-    height: 25px;
-    position: relative;
-    top: 17px;
+height: 25px;
+position: relative;
+top: 3px;
 }
 
-.header-text {
-    font-family: 'Open Sans', sans-serif;
-    color: #fbf2c0;
-    padding-left: 5px;
+.page {
+    display: grid;
+    row-gap: 30px;
+    column-gap: 30px;
+    width: 100%;
+    padding: 30px;
+    margin: 0 auto;
+    grid-template-areas:
+      "order payment"
+      "total total";
+    grid-template-columns: 1fr 1fr;;
+}
+
+.order {
+    grid-area: order;
+}
+  
+.payment {
+    grid-area: payment;
+}
+
+.total {
+    grid-area: total;
 }
 
 .section {
-    background-color: #dbbc94;
+    background-color: #eee1d5;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 0.2);
+    padding: 15px;
+    margin-bottom: 20px;
+    width: 100%;
 }
 
 .section-title {
-    font-family: 'Open Sans', sans-serif;
-    color: #84552b;
-    padding-top: 20px;
-    padding-left: 20px;
+    color: #885a2d;
+    font-weight: normal;
+    font-size: 16px;
 }
 
-.item {
-    display: flex;
-    border-bottom: solid 10px;
-    border-color: #e5cbb2;
-}
-
-.item-quantity {
-    font-family: 'Open Sans', sans-serif;
-    color: black;
-}
-
-.item-name {
-    font-family: 'Open Sans', sans-serif;
-    color: black;
-}
-
-.item-modifiers {
-    font-family: 'Open Sans', sans-serif;
-    color: black;
-}
-
-.item-price {
-    font-family: 'Open Sans', sans-serif;
-    color: black;
+.items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
