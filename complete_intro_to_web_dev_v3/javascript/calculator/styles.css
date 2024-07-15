@@ -1,0 +1,81 @@
+* {
+    box-sizing: border-box;
+}
+
+.buttons {
+    display: grid;
+    grid-template-areas: 
+    "c-button c-button del-button div-button"
+    "seven-button eight-button nine-button mult-button"
+    "four-button five-button six-button sub-button"
+    "one-button two-button three-button add-button"
+    "zero-button zero-button zero-button eq-button";
+}
+
+.c-button {
+    grid-area: c-button;
+}
+
+.del-button {
+    grid-area: del-button;
+}
+
+.div-button {
+    grid-area: div-button;
+}
+
+.mult-button {
+    grid-area: mult-button;
+}
+
+.sub-button {
+    grid-area: sub-button;
+}
+
+.add-button {
+    grid-area: add-button;
+}
+
+.eq-button {
+    grid-area: eq-button;
+}
+
+.one-button {
+    grid-area: one-button;
+}
+
+.two-button {
+    grid-area: two-button;
+}
+
+.three-button {
+    grid-area: three-button;
+}
+
+.four-button {
+    grid-area: four-button;
+}
+
+.five-button {
+    grid-area: five-button;
+}
+
+.six-button {
+    grid-area: six-button;
+}
+
+.seven-button {
+    grid-area: seven-button;
+}
+
+.eight-button {
+    grid-area: eight-button;
+}
+
+.nine-button {
+    grid-area: nine-button;
+}
+
+.zero-button {
+    grid-area: zero-button;
+}
