@@ -1,32 +1,91 @@
-let string = "0";
+let displayStr = "0"
+let firstOperand = NaN
+let operator = NaN
 
-const display = document.querySelector(".display");
+const display = document.querySelector(".display")
 
-// buttons from querySelector
-const buttons = document.querySelector(".buttons");
+function rerender() {
+    display.innerText = displayStr;
+}
 
-// button eventListeners
-buttons.addEventListener("click", function(event) {
-    console.log(event);
-    if (event.target.tagName === "BUTTON") {
-        let button_content = event.target.innerText;
-        console.log(button_content);
-        
-        if (button_content === "C") {
-            string = "0";
-            console.log("cleared")
-        } else if (button_content === "Del") {
-            if (string.length !== 1) {
-                string = string.slice(0, -1)
-            }
-            console.log("deleting?")
-        } else if (string === "0") {
-            string = button_content;
-            console.log("new num")
-        } else {
-            string += button_content;
-            console.log("appending num")
+function handleSymbol(value) {
+    switch (value) {
+        case "C": {
+            displayStr = "0"
+            break
         }
-        display.innerText = string;
+        case "Del": {
+            if (displayStr.length > 1) {
+                displayStr = displayStr.slice(0, -1)
+            }
+            break
+        }
+        case "=": {
+            if (isNaN(firstOperand)) { 
+                // do nothing
+            } else {
+                handleMath()
+            }
+            break
+        }
+        case "-":
+        case "/":
+        case "X":
+        case "+": {
+            firstOperand = parseInt(displayStr)
+            operator = value
+            displayStr = "0"
+            break
+        }
     }
-});
+}
+
+function handleMath() {
+    let result = parseInt(firstOperand)
+    switch (operator) {
+        case "+": {
+            result += parseInt(displayStr)
+            break
+        }
+        case "-": {
+            result -= parseInt(displayStr)
+            break
+        }
+        case "X": {
+            result *= parseInt(displayStr)
+            break
+        }
+        case "/": {
+            result /= parseInt(displayStr)
+            break
+        }
+    }
+    displayStr = result
+}
+
+function handleNumber(value) {
+    if (displayStr === "0") {
+        displayStr = value
+    } else {
+        displayStr += value
+    }
+}
+
+function buttonClick(value) {
+    if (isNaN(parseInt(value))) {
+        handleSymbol(value)
+    } else {
+        handleNumber(value)
+    }
+    rerender()
+}
+
+function init() {
+    document
+      .querySelector(".buttons")
+      .addEventListener("click", function (event) {
+        buttonClick(event.target.innerText);
+      });
+  }
+  
+  init();
