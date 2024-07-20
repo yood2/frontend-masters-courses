@@ -1,4 +1,5 @@
-let url = "https://words.dev-apis.com/word-of-the-day"
+let fetchURL = "https://words.dev-apis.com/word-of-the-day"
+let postURL = "https://words.dev-apis.com/validate-word"
 
 let complete = false
 
@@ -12,19 +13,28 @@ async function getWord() {
     display.innerText = displayStr
 }
 
-function scoreboard(event) {
-    if (!complete) {
-        if (displayStr.length < 6) {
-            displayStr += event.key
-            console.log(displayStr)
-            display.innerText = displayStr
-        }
-        console.log("Too long")
-    }
+function rerender() {
+    display.innerText = displayStr;
 }
 
-function buttonClick() {
-    let str = getWord()
+async function checkWord() {
+    const result = await fetch(postURL,{
+        method: "POST",
+        body: JSON.stringify({ word: displayStr })
+    })
+    const { validWord } = await result.json()
+    console.log(validWord)
+}
+
+function buttonClick(event) {
+    if (isLetter(event.key)) {
+        if (displayStr.length <= 5) {
+            displayStr += event.key
+            rerender()
+        }
+    } else if (event.key === "Enter") {
+        checkWord()
+    }
 }
 
 function isLetter(letter) {
@@ -33,13 +43,9 @@ function isLetter(letter) {
 
 function init() {
     document
-      .addEventListener("keydown", function (event) {
-        if (!complete) {
-            if (isLetter(event.key)) {
-                scoreboard(event)
-            }
-        }
-      });
+        .addEventListener("keydown", function (event) {
+            buttonClick(event)
+        });
   }
   
-  init();
+init();
