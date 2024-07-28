@@ -2,7 +2,7 @@ const Pet = (param) => {
     return React.createElement('div', {}, [
         React.createElement('h1', {}, param.name),
         React.createElement('h2', {}, param.animal),
-        React.createElement('h2', {}, param.breed)
+        React.createElement('h2', {}, param.breed),
     ]);
 };
 
@@ -14,17 +14,17 @@ const App = () => {
         React.createElement(Pet, {
             name: 'Luna',
             animal: 'Dog',
-            breed: 'Havanese'
+            breed: 'Havanese',
         }),
         React.createElement(Pet, {
             name: 'Pepper',
             animal: 'Bird',
-            breed: 'Cockatiel'
+            breed: 'Cockatiel',
         }),
         React.createElement(Pet, {
             name: 'Doink',
             animal: 'Cat',
-            breed: 'Mixed'
+            breed: 'Mixed',
         })
     );
 };
