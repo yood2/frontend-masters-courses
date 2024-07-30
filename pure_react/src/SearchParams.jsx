@@ -3,6 +3,11 @@ import Pet from './Pet';
 import useBreedList from './useBreedList';
 const ANIMALS = ['bird', 'cat', 'dog', 'rabbit', 'reptile'];
 
+// const testFunc = () => {
+//     console.log('We are in testFunc!');
+//     return [1, 2];
+// };
+
 const SearchParams = () => {
     const [pets, setPets] = useState([]);
     const [location, setLocation] = useState('');
