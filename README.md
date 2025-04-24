@@ -1,5 +1,5 @@
 # Frontend Masters Courses
-Compiling all my notes and projects to a single repository. Thank you to GitHub Education for providing the free membership :)
+Compiling all my notes and projects to a single repository.
 
 ## Courses In Progress
 - Electron, v3
